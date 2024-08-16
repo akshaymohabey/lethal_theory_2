@@ -15,8 +15,6 @@ import agents
 import copy
 import random
 
-
-
 # Returns total number of citizens in the model at a time
 def total_citizens(model):
     x = 0
@@ -45,10 +43,8 @@ def killed_citizens(model):
 def killed_militants(model):
     return model.init_militants - total_militants(model)
 
-def killed_militants(model):
+def killed_msquad(model):
     return model.init_msquad - total_msquad(model)
-
-
 
 
 # Model Class
@@ -132,7 +128,7 @@ class LethalModel(mesa.Model):
             self.init_msquad = total_msquad(self)
 
         self.datacollector = mesa.DataCollector(
-        model_reporters = {"citizens": killed_citizens, "militants": killed_militants, "msquad": killed_militants}
+        model_reporters = {"citizens": killed_citizens, "militants": killed_militants, "msquad": killed_msquad}
         )
 
     def step(self):

@@ -55,8 +55,8 @@ chart = ChartModule(
   )
 
 # Generating Slider
-militants_slider = Slider("Number of Militants", value=20, min_value=12, max_value=30, step=1)
-msquad_slider = Slider("Number of Military Squads", value=7, min_value=2, max_value=10, step=1)
+# militants_slider = Slider("Number of Militants", value=20, min_value=12, max_value=30, step=1)
+# msquad_slider = Slider("Number of Military Squads", value=7, min_value=2, max_value=10, step=1)
 
 # server = ModularServer(
 #   LethalModel,
@@ -71,8 +71,8 @@ server = ModularServer(
   [grid, chart],
   "Lethal Theory",
   {"citizens":p.No_of_Citizens,
-   "militants": militants_slider,
-   "military_squad":msquad_slider}
+   "militants": p.No_of_Militants,
+   "military_squad":p.No_of_MilitarySquad}
   )
 server.port = 8521 # Any non-80 port to appease replit
 server.launch()
